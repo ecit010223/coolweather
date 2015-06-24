@@ -12,7 +12,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 public class CoolWeatherDB {
 	public static final String DB_NAME = "cool_weather";
-	public static final int VERSION = 1;
+	public static final int VERSION = 8;
 	private static CoolWeatherDB coolWeatherDb;
 	private SQLiteDatabase db;
 
@@ -63,7 +63,7 @@ public class CoolWeatherDB {
 		if (city != null) {
 			ContentValues values = new ContentValues();
 			values.put("city_name", city.getCityName());
-			values.put("city_node", city.getCityCode());
+			values.put("city_code", city.getCityCode());
 			values.put("province_id", city.getProvinceId());
 			db.insert("City", null, values);
 		}
